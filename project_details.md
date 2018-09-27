@@ -3,24 +3,26 @@ CROWD FUNDING:
 Nama Database: galang_dana_db
 
 Table: 
-1. Project (input by admin)
-    - PK: id: INTEGER
+1. Project
+    - PK - id: INTEGER
     - name: STRING
-    - description
-    - Amount needed
-    - Current amount
+    - description: STRING
+    - target: INTEGER
+    - currentAmount: INTEGER, defaultValue: 0
 
-2. Donator (input by donator)
-    - id
-    - userName
-    - Name
-    - password
+2. User 
+    - PK - id: INTEGER
+    - name: STRING
+    - password: STRING
+    - email: STRING
+    - role: STRING, defaultValue: user
     
-3. Transaction (conjunction) (form)
+3. Transaction (conjunction form)
     - id
     - ProjectId as FK
-    - DonaturId as FK
-    - Amount
+    - UserId as FK
+    - amount, defaultValue: 0
+    - status: pending, approved
 
 List pages:
 1. homepage (list project)
@@ -35,3 +37,5 @@ List pages:
 10. approval pending/approved dari admin
 11. admin page 
 12. share by email +share to fb
+
+routes:
